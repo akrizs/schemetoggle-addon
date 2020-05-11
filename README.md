@@ -6,3 +6,12 @@ It simply creates and attaches to some keyboard events and toolbar icon click to
 I write vuejs components, feel free to pull and push and fork and do whatever you like if you want to create your own or just fiddle around with this one...
 
 ### Happy days!
+
+At the moment im triggering the events like this
+###### preview.js
+```javascript
+import {schemeToggler, CHANNEL_NAME} from "./schemeToggle-addon";
+
+const ch = addons.getChannel()
+ch.on(CHANNEL_NAME, schemeToggler.bind(ch))
+```
