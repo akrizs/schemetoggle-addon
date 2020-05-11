@@ -5,11 +5,8 @@ import * as C from "./constants";
 
 import CookieJar from "./_$cookies";
 
-import Sun from './icons/Sun';
-import Moon from './icons/Moon';
-
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
+import LightbulbOff from './icons/LightbulbOff';
+import LightbulbOn from './icons/LightbulbOn';
 
 export const ColorSwap = ({sb}) => {
     let currMode, isDark, preferredSchemeOnInitiation;;
@@ -78,7 +75,7 @@ export const ColorSwap = ({sb}) => {
           }
           onClick={changeScene}
         >
-          {isDark ? <Sun /> : <Moon />}
+          {isDark ? <LightbulbOff /> : <LightbulbOn />}
         </IconButton>
       );
 }
