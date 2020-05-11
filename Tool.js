@@ -44,7 +44,7 @@ export const ColorSwap = ({sb}) => {
 
     sb.getChannel().emit(C.CHANNEL_NAME, currMode);
 
-    const changeScene = (e) => {
+    const changeScene = ({event}) => {
         currMode = CookieJar.get(C.COOKIE_NAME);
 
         if(currMode == 'dark'){
