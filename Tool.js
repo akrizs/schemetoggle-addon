@@ -56,8 +56,18 @@ export const ColorSwap = ({sb}) => {
         }
 
         storeCurrentChoice(currMode);
+        console.log("Emit change")
         sb.getChannel().emit(C.CHANNEL_NAME, currMode);
     }
+
+    // Triggering 8 times, resulting in no change... xD
+    sb.getChannel().on('previewKeydown', ({event}) => {
+        console.log("KeyDown detected");
+        console.log(event);
+        if(event.keyCode !== 66) return;
+        changeScene()
+
+    })
 
     return (
         <IconButton
